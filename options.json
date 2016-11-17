@@ -1,0 +1,7 @@
+/*options (object literal in scope of all functions)
+  legacy platform key
+  new platform key
+  url for legacy platform
+  url for new platform
+  other options like notifications, max pages, etc.
+  */
