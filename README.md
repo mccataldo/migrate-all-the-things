@@ -1,7 +1,8 @@
 ###Summary
-This app will help migrate data from the ObservePoint legacy platform to the new one. The task is accomplished by first installing the NodeJS app package through npm and configuring it with API keys and other preferences. Then via ObservePoint's REST APIs, HTTP requests will be made to 1) fetch data from the legacy platform (GET method) and 2) send data to the new platform (POST/PUT methods). In between, the JSON data from the legacy platform needs to be reconstructed to fit the respective schemas the new plaform API expects. 
-The app will only migrate data for a single account but it has the potential to migrate multiple accounts at once given a set of API keys and some additional wizardry. 
+This app will help migrate data from the ObservePoint legacy platform to the new one. The task is accomplished by first installing the NodeJS app package through npm and configuring it with API keys and other preferences. Then via ObservePoint's REST APIs, HTTP requests will be made to 1) fetch data from the legacy platform (GET method) and 2) send data to the new platform (POST/PUT methods). In between, the JSON data from the legacy platform needs to be reconstructed to fit the respective schemas the new plaform API expects.
+The app will only migrate data for a single account but it has the potential to migrate multiple accounts at once given a set of API keys and some additional wizardry.
 
+![Y U NO meme](images/y-u-no-migrate.jpg)
 ###Architecture
 ####Overview
   - input api key for legacy platform and api key for new platform
@@ -10,7 +11,7 @@ The app will only migrate data for a single account but it has the potential to 
   - for each property
     - create an equivalent in np
       "POST /domains"
-    - request all audits for the property 
+    - request all audits for the property
       "GET /property/id/audits"
     - for each audit
       - create an equivalent in np
@@ -25,14 +26,14 @@ The app will only migrate data for a single account but it has the potential to 
 ####Structure of functions
   - options (object literal in scope of all functions)
     - legacy platform key
-    - new platform key 
+    - new platform key
     - url for legacy platform
     - url for new platform
     - other options like notifications, max pages, etc.
   - migrateAll()
     - migrateDomains()
     - stores map
-    - for each propertyId:domainId kvp 
+    - for each propertyId:domainId kvp
       - calls migrateAudits(propertyId, domainId)
       - stores map
       - calls migrateJourneys(propertyId, domainId)
