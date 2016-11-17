@@ -1,0 +1,19 @@
+{
+  "name": "migrate-all-the-things",
+  "version": "1.0.0",
+  "description": "Migrates data from ObservePoint's legacy platform to the new one via ObservePoint APIs.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mccataldo/migrate-all-the-things.git"
+  },
+  "author": "mike cataldo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mccataldo/migrate-all-the-things/issues"
+  },
+  "homepage": "https://github.com/mccataldo/migrate-all-the-things#readme"
+}
